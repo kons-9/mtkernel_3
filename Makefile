@@ -29,7 +29,7 @@ $(BUILD_DIR):
 $(AUTOCONF_H): $(MTKERNEL_ROOT)/Kconfig | $(BUILD_DIR)
 	@echo 'GEN $@'
 	cd $(MTKERNEL_ROOT) && python3 -c \
-	  "import kconfiglib; k=kconfiglib.Kconfig('Kconfig'); k.load_allconfig(''); k.write_autoconf('$(AUTOCONF_H)')"
+	  "import kconfiglib; k=kconfiglib.Kconfig('Kconfig'); k.load_allconfig(''); k.config_prefix=''; k.write_autoconf('$(AUTOCONF_H)')"
 
 $(CONFIG_H): $(AUTOCONF_H)
 	@echo 'GEN $@'
