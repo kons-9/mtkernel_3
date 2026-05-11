@@ -19,7 +19,7 @@
 #ifndef	__DEVINC_DEVICE_H__
 #define	__DEVINC_DEVICE_H__
 
-#include <config_device.h>
+#include <autoconf.h>
 
 #if USE_SDEV_DRV		/* Use Sample device driver */
 
@@ -33,7 +33,15 @@
 
 #if DEVCNF_USE_IIC		/* Use I2C communication device */
 #include "dev_i2c.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 #endif	/* DEVCNF_USE_IIC */
 
 #endif	/* USE_SDEV_DRV */
+
+#ifdef __cplusplus
+}
+#endif
 #endif	/* __DEVINC_DEVICE_H__ */
