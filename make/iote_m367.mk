@@ -3,7 +3,7 @@
 ################################################################################
 
 GCC  ?= arm-none-eabi-gcc
-AS   ?= arm-none-eabi-gcc
+AS   := arm-none-eabi-gcc
 LINK ?= arm-none-eabi-gcc
 
 CFLAGS ?= -mcpu=cortex-m3 -mthumb -ffreestanding \
